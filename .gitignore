@@ -1,7 +1,7 @@
 # Node modules
 node_modules/
 client/node_modules/
-
+notes.html
 # Environment variables
 .env
 
