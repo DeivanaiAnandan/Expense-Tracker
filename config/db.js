@@ -6,7 +6,7 @@ export const connectDB = async ()=>{
         console.log(`Mongo connected in ${conn.connection.host}`.cyan.underline.bold)
     } catch (err) {
         console.log(`Error: ${err.message}`.red);
-         // ❌ DO NOT exit in production
+         // ❌ DO NOT exit in production which creates a loop
     if (process.env.NODE_ENV !== "production") {
       process.exit(1);
     }
