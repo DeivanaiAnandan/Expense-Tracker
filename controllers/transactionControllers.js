@@ -31,12 +31,12 @@ export const addTransaction = async (req, res, next) => {
 
   try {
         // If body is missing
-    // if (!req.body) {
-    //   return res.status(400).json({
-    //     success: false,
-    //     error: "Request body is missing",
-    //   });
-    // }
+    if (!req.body) {
+      return res.status(400).json({
+        success: false,
+        error: "Request body is missing",
+      });
+    }
 
         const {text, amount} = req.body;
 
@@ -105,3 +105,18 @@ export const deleteTransaction = async (req, res, next) => {
       });
   }
 };
+
+// export const updateNote = async (req, res) => {
+//   const { title, content } = req.body;
+//   const note = await Note.findByIdAndUpdate(
+//     req.params.id,
+//     { title, content },
+//     { new: true }
+//   );
+//   res.json(note);
+// };
+
+// export const deleteNote = async (req, res) => {
+//   await Note.findByIdAndDelete(req.params.id);
+//   res.json({ message: "Note deleted" });
+// };
